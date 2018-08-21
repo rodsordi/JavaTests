@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>br.com.rodrigo.javatests</groupId>
+		<artifactId>javatests</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.rodrigo.javatests.jaspertests</groupId>
+	<artifactId>jaspertests</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>JasperTests</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jasperreports.version>4.0.1</jasperreports.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.alexnederlof</groupId>
+				<artifactId>jasperreports-plugin</artifactId>
+				<version>2.0</version>
+
+				<dependencies>
+					<dependency>
+						<groupId>org.codehaus.groovy</groupId>
+						<artifactId>groovy-all</artifactId>
+						<version>1.5.8</version>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>jasper</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<!-- These are the default configurations: -->
+					<compiler>net.sf.jasperreports.engine.design.JRJdtCompiler</compiler>
+					<sourceDirectory>C:\JasperWorkspace</sourceDirectory>
+					<outputDirectory>C:\JasperWorkspace</outputDirectory>
+					<outputFileExt>.jasper</outputFileExt>
+					<xmlValidation>true</xmlValidation>
+					<verbose>false</verbose>
+					<numberOfThreads>4</numberOfThreads>
+					<failOnMissingSourceDirectory>true</failOnMissingSourceDirectory>
+					<sourceScanner>org.codehaus.plexus.compiler.util.scan.StaleSourceScanner</sourceScanner>
+					<additionalProperties>
+						<net.sf.jasperreports.awt.ignore.missing.font>true</net.sf.jasperreports.awt.ignore.missing.font>
+						<net.sf.jasperreports.default.pdf.font.name>Courier</net.sf.jasperreports.default.pdf.font.name>
+						<net.sf.jasperreports.default.pdf.encoding>UTF-8</net.sf.jasperreports.default.pdf.encoding>
+						<net.sf.jasperreports.default.pdf.embedded>true</net.sf.jasperreports.default.pdf.embedded>
+					</additionalProperties>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
