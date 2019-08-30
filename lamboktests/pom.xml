@@ -9,9 +9,7 @@
 		<artifactId>javatests</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>br.com.rodrigo.javatests</groupId>
 	<artifactId>lamboktests</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>lamboktests</name>
 	<url>http://maven.apache.org</url>
 	<properties>

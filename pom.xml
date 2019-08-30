@@ -11,6 +11,9 @@
 	<modules>
 		<module>jaspertests</module>
 		<module>lamboktests</module>
+		<module>jbosstests</module>
+		<module>WebProjectTests</module>
+		<module>ConvertersTests</module>
 	</modules>
 
 	<dependencies>
