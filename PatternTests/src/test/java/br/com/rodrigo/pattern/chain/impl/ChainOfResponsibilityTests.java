@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import br.com.rodrigo.model.ExtendedModel;
 import br.com.rodrigo.pattern.chain.Result;
-import br.com.rodrigo.pattern.chain.impl.ChainOfResponsibility;
 
 public class ChainOfResponsibilityTests {
 

@@ -4,7 +4,7 @@ import br.com.rodrigo.model.Model;
 import br.com.rodrigo.pattern.chain.Chain;
 import br.com.rodrigo.pattern.chain.Step;
 
-public class ChainOfResponsibility extends Chain {
+public class ChainOfResponsibility extends Chain<Model> {
 	
 	public ChainOfResponsibility() {
 		this
@@ -13,7 +13,7 @@ public class ChainOfResponsibility extends Chain {
 		.link(new C());
 	}
 	
-	public class A extends Step {
+	public class A extends Step<Model> {
 		protected void check(final Model model) {
 			if (model.getId() > 10) {
 				result.setQtd(result.getQtd() + 1);
@@ -22,7 +22,7 @@ public class ChainOfResponsibility extends Chain {
 		}
 	}
 	
-	public class B extends Step {
+	public class B extends Step<Model> {
 		protected void check(final Model model) {
 			if (model.getId() % 2 == 1) {
 				result.setQtd(result.getQtd() + 1);
@@ -31,7 +31,7 @@ public class ChainOfResponsibility extends Chain {
 		}
 	}
 	
-	public class C extends Step {
+	public class C extends Step<Model> {
 		protected void check(final Model model) {
 			if (model.getId() == 15) {
 				result.setQtd(result.getQtd() + 1);
